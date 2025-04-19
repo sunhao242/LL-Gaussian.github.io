@@ -172,7 +172,7 @@
   </div>
 </section>
 
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
@@ -244,42 +244,52 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
+    <!-- Teaser Image -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <figure class="image is-16by9">
+          <img src="static/images/teaser.pdf" alt="Teaser Image">
+          <figcaption class="has-text-centered">Figure 1: LL-Gaussian synthesizes novel views from low-light inputs with real-time speed and high fidelity.</figcaption>
+        </figure>
+      </div>
+    </div>
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            Novel view synthesis (NVS) in low-light scenes remains a significant challenge due to
+            degraded inputs characterized by severe noise, low dynamic range (LDR) and unreliable
+            initialization. While recent NeRF-based approaches have shown promising results, most
+            suffer from high computational costs, and some rely on carefully captured or pre-processed
+            data—such as RAW sensor inputs or multi-exposure sequences—which severely limits their
+            practicality. In contrast, 3D Gaussian Splatting (3DGS) enables real-time rendering with
+            competitive visual fidelity; however, existing 3DGS-based methods struggle with low-light
+            sRGB inputs, resulting in unstable Gaussian initialization and ineffective noise suppression.
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            To address these challenges, we propose LL-Gaussian, a novel framework for 3D reconstruction
+            and enhancement from low-light sRGB images, enabling pseudo normal-light novel view synthesis.
+            Our method introduces three key innovations: 1) an end-to-end \textbf{L}ow-\textbf{L}ight
+            \textbf{G}aussian \textbf{I}nitialization \textbf{M}odule (\textbf{LLGIM}) that leverages
+            dense priors from learning-based MVS approach to generate high-quality initial point 
+            clouds; 2) a dual-branch Gaussian decomposition model that disentangles intrinsic scene
+            properties (reflectance and illumination) from transient interference, enabling stable
+            and interpretable optimization; 3) an unsupervised optimization strategy guided by both
+            physical constrains and diffusion prior to jointly steer decomposition and enhancement.
           </p>
           <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Additionally, we contribute a challenging dataset collected in extreme low-light
+            environments and demonstrate the effectiveness of LL-Gaussian. Compared to state-of-the-art
+            NeRF-based methods, LL-Gaussian achieves up to \textbf{2,000$\times$ faster} inference and
+            reduces training time to just \textbf{2\%}, while delivering superior reconstruction and
+            rendering quality.
           </p>
         </div>
       </div>
@@ -287,7 +297,7 @@
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+<!--     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -296,7 +306,7 @@
         </div>
       </div>
     </div>
-    <!--/ Paper video. -->
+    <!--/ Paper video. --> -->
   </div>
 </section>
 
