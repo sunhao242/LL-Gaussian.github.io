@@ -326,10 +326,9 @@
     </div>
     <!--/ Method. -->
   </div>
-</section>
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Video. -->
+    <!-- Video Tabs -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <div class="tabs is-boxed is-centered">
@@ -341,38 +340,38 @@
           </ul>
         </div>
         
+        <!-- Videos -->
         <div id="stone" class="scan-content">
-          <video  src="static/images/stone.mp4" autoplay loop muted style="width: 100%; height: auto; top: 0; left: 0;"></video>
+          <video src="static/images/stone.mp4" autoplay loop muted style="width: 100%; height: auto;"></video>
         </div>
         <div id="pole" class="scan-content is-hidden">
-          <video  src="static/images/pole.mp4" autoplay loop muted style="width: 100%; height: auto; top: 0; left: 0;"></video>
+          <video src="static/images/pole.mp4" autoplay loop muted style="width: 100%; height: auto;"></video>
         </div>
         <div id="chair" class="scan-content is-hidden">
-          <video src="static/images/chair.mp4" autoplay loop muted style="width: 100%; height: auto; top: 0; left: 0;"></video>
+          <video src="static/images/chair.mp4" autoplay loop muted style="width: 100%; height: auto;"></video>
         </div>
         <div id="firehydrant" class="scan-content is-hidden">
-          <video src="static/images/firehydrant.mp4" autoplay loop muted style="width: 100%; height: auto; top: 0; left: 0;"></video>
+          <video src="static/images/firehydrant.mp4" autoplay loop muted style="width: 100%; height: auto;"></video>
         </div>
-        
+
+        <!-- Tab switching -->
         <script>
           const tabs = document.querySelectorAll('.tabs ul li');
           const contents = document.querySelectorAll('.scan-content');
-        
+
           tabs.forEach(tab => {
             tab.addEventListener('click', () => {
               tabs.forEach(t => t.classList.remove('is-active'));
               contents.forEach(c => c.classList.add('is-hidden'));
-        
+
               tab.classList.add('is-active');
               document.getElementById(tab.dataset.scan).classList.remove('is-hidden');
             });
           });
         </script>
-        
 
       </div>
     </div>
-    <!-- Video. -->
   </div>
 </section>
 <section class="section">
